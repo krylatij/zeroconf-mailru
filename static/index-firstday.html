@@ -1,0 +1,3108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title></title>
+	<meta name="description" content=""/>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"/>
+	<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body class="body">
+	<div class="wrapper">
+		<div class="loading"><div class="loader"></div></div>
+		<div class="background">
+			<div class="background__overlay"></div>
+			<div class="background__grid"></div>
+		</div>
+		<div class="part" id="part-first">
+			<div class="main-wnd">
+				<div class="main-wnd__iwr"></div>
+				<img src="img/matr.png" class="main-wnd__matr" id="pash" alt="">
+				<div class="main-wnd__height">
+					<div class="main-wnd__inner">
+						<span class="main-wnd__logowr"><img src="img/logo-mail.png" class="main-wnd__logo" alt=""></span>
+						<div class="main-wnd__logo-gamewr">
+							<img src="img/zero-logo.jpg" class="main-wnd__logo-game" alt="">
+						</div>
+						<h1 class="main-wnd__h">Викторина Mail.Ru</h1>
+						<p class="main-wnd__p">Пройди тест и выиграй робота BB8!</p>
+                                                <p class="main-wnd__p">Время на прохождение - 3 минуты</p>
+					</div>
+				</div>
+				<div class="main-wnd__start">
+					<a class="main-wnd__but" id="start"><span class="main-wnd__but-in"><span class="main-wnd__but-cell">Начать игру</span></span></a>
+				</div>
+			</div>
+			<div class="error-wnd" id="part-err">
+				<a class="error-wnd__close" id="pashclose"></a>
+				<div class="error-wnd__inner">
+					<img src="img/error.jpg" class="error-wnd__img" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="part" id="numb">
+			<div class="numb">
+				<div class="numb__center" style="display: none;"></div>
+			</div>
+		</div>
+		<div class="part" id="choice">
+                  				<div class="question__top">
+					<div class="question__info">
+						<span class="question__lab">заработано<br>очков</span><span class="question__val question__val_pad" id="qvalue2">0</span><span class="question__lab">осталось<br>времени</span><span class="question__val" id="timer2"><span class="min">3</span>:<span class="sek">00</span></span>
+						<div class="question__bord-1"></div>
+						<div class="question__bord-2"></div>
+						<div class="question__bord-3"></div>
+						<div class="question__bord-4"></div>
+						<div class="question__bord-5"></div>
+						<div class="question__bord-6"></div>
+						<div class="question__bord-7"></div>
+						<div class="question__bord-8"></div>
+					</div>
+				</div>
+
+			<div class="choice">
+				<div class="choice__inner">
+					<div class="choice__h">Выберите категорию и сложность вопроса</div>
+					<div class="choice__block">
+						<div class="choice__row">
+							<div class="choice__cat">Веб</div>
+							<div class="choice__items">
+								<a href="it_1_100" class="choice__item" data-bg="background__overlay_100">
+									<img src="img/kv-1.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">100</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_bl"></span></span>
+									</span>
+								</a>
+								<a href="it_1_200" class="choice__item" data-bg="background__overlay_200">
+									<img src="img/kv-2.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">200</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_gr"></span></span>
+									</span>
+								</a>
+								<a href="it_1_400" class="choice__item" data-bg="background__overlay_400">
+									<img src="img/kv-3.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">400</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_or"></span></span>
+									</span>
+								</a>
+								<a href="it_1_600" class="choice__item" data-bg="background__overlay_600">
+									<img src="img/kv-4.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">600</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_pi"></span></span>
+									</span>
+								</a>
+								<a href="it_1_800" class="choice__item" data-bg="background__overlay_800">
+									<img src="img/kv-5.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">800</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_re"></span></span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="choice__row">
+							<div class="choice__cat">Крипто</div>
+							<div class="choice__items">
+								<a href="it_2_100" class="choice__item" data-bg="background__overlay_100">
+									<img src="img/kv-1.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">100</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_bl"></span></span>
+									</span>
+								</a>
+								<a href="it_2_200" class="choice__item" data-bg="background__overlay_200">
+									<img src="img/kv-2.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">200</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_gr"></span></span>
+									</span>
+								</a>
+								<a href="it_2_400" class="choice__item" data-bg="background__overlay_400">
+									<img src="img/kv-3.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">400</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_or"></span></span>
+									</span>
+								</a>
+								<a href="it_2_600" class="choice__item" data-bg="background__overlay_600">
+									<img src="img/kv-4.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">600</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_pi"></span></span>
+									</span>
+								</a>
+								<a href="it_2_800" class="choice__item" data-bg="background__overlay_800">
+									<img src="img/kv-5.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">800</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_re"></span></span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="choice__row">
+							<div class="choice__cat">Binary</div>
+							<div class="choice__items">
+								<a href="it_3_100" class="choice__item" data-bg="background__overlay_100">
+									<img src="img/kv-1.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">100</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_bl"></span></span>
+									</span>
+								</a>
+								<a href="it_3_200" class="choice__item" data-bg="background__overlay_200">
+									<img src="img/kv-2.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">200</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_gr"></span></span>
+									</span>
+								</a>
+								<a href="it_3_400" class="choice__item" data-bg="background__overlay_400">
+									<img src="img/kv-3.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">400</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_or"></span></span>
+									</span>
+								</a>
+								<a href="it_3_600" class="choice__item" data-bg="background__overlay_600">
+									<img src="img/kv-4.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">600</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_pi"></span></span>
+									</span>
+								</a>
+								<a href="it_3_800" class="choice__item" data-bg="background__overlay_800">
+									<img src="img/kv-5.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">800</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_re"></span></span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="choice__row">
+							<div class="choice__cat">Network</div>
+							<div class="choice__items">
+								<a href="it_4_100" class="choice__item" data-bg="background__overlay_100">
+									<img src="img/kv-1.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">100</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_bl"></span></span>
+									</span>
+								</a>
+								<a href="it_4_200" class="choice__item" data-bg="background__overlay_200">
+									<img src="img/kv-2.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">200</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_gr"></span></span>
+									</span>
+								</a>
+								<a href="it_4_400" class="choice__item" data-bg="background__overlay_400">
+									<img src="img/kv-3.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">400</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_or"></span></span>
+									</span>
+								</a>
+								<a href="it_4_600" class="choice__item" data-bg="background__overlay_600">
+									<img src="img/kv-4.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">600</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_pi"></span></span>
+									</span>
+								</a>
+								<a href="it_4_800" class="choice__item" data-bg="background__overlay_800">
+									<img src="img/kv-5.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">800</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_re"></span></span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="choice__row">
+							<div class="choice__cat">Fun & Profit</div>
+							<div class="choice__items">
+								<a href="it_5_100" class="choice__item" data-bg="background__overlay_100">
+									<img src="img/kv-1.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">100</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_bl"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_bl"></span></span>
+									</span>
+								</a>
+								<a href="it_5_200" class="choice__item" data-bg="background__overlay_200">
+									<img src="img/kv-2.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">200</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_gr"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_gr"></span></span>
+									</span>
+								</a>
+								<a href="it_5_400" class="choice__item" data-bg="background__overlay_400">
+									<img src="img/kv-3.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">400</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_or"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_or"></span></span>
+									</span>
+								</a>
+								<a href="it_5_600" class="choice__item" data-bg="background__overlay_600">
+									<img src="img/kv-4.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">600</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_pi"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_pi"></span></span>
+									</span>
+								</a>
+								<a href="it_5_800" class="choice__item" data-bg="background__overlay_800">
+									<img src="img/kv-5.png" class="choice__img" alt="">
+									<span class="choice__kv">
+										<span class="choice__in">800</span>
+									</span>
+									<span class="choice__hover">
+										<span class="choice__c choice__c_1"><span class="choice__cin choice__cin_1 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_2"><span class="choice__cin choice__cin_2 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_3"><span class="choice__cin choice__cin_3 choice__cin_re"></span></span>
+										<span class="choice__c choice__c_4"><span class="choice__cin choice__cin_4 choice__cin_re"></span></span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="part" id="qpart">
+			<div class="question">
+				<div class="question__top">
+					<div class="question__info">
+						<span class="question__lab">заработано<br>очков</span><span class="question__val question__val_pad" id="qvalue">0</span><span class="question__lab">осталось<br>времени</span><span class="question__val" id="timer"><span class="min">2</span>:<span class="sek">00</span></span>
+						<div class="question__bord-1"></div>
+						<div class="question__bord-2"></div>
+						<div class="question__bord-3"></div>
+						<div class="question__bord-4"></div>
+						<div class="question__bord-5"></div>
+						<div class="question__bord-6"></div>
+						<div class="question__bord-7"></div>
+						<div class="question__bord-8"></div>
+					</div>
+				</div>
+				<!-- part items -->
+				<div class="part__items">
+					<div class="part__item" id="it_1_100">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">В каком из этих браузеров нет встроенного фильтра XSS?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Google Chrome</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="100">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Mozilla Firefox</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Safari</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Internet Explorer</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_1_200">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какие шеллы изображены на картинках?<img src="upload/1-2.jpg" style="height: 350px;display: block;margin: 20px auto 0;" alt=""></div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">WSO & r57shell</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">WSO & c99shell</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">DxShell & c99shell</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="200">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">DxShell & r57shell</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_1_400">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Что из этого не является началом комментария в MySQL? </div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">/*</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">#</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">--</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="400">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">//</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_1_600">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из следующих векторов позволит провести атаку типа XSS, если будет передан в параметр p: document.write(p.replace(/script/ig, '').toUpperCase()) ?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">'&gt;&lt;script&gt;alert(1)&lt;/script&gt;</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="600">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">&lt;ſcript/ſrc=//xsspayload.com&gt;&lt;/ſcript&gt;</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">%3Cscript%3Ealert(1) %3C%2Fscript%3E</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">&lt;scr+ipt&gt;alert(1)&lt;/scr+ipt&gt;</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_1_800">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из перечисленных векторов приведет к обходу защиты в следующем скрипте								<img src="upload/web800-php.png" style="height: 270px;display: block;margin: 20px auto 0;" alt="">							</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="800">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">filename.jpg\n.php</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">filename.pHp</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">filename.php.jpg</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">filename.php%252500.jpg</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_2_100">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какая область криптографии существует? </div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">квадратная</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">сферическая</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">тетраэдральная</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="100">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">эллиптическая</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_2_200">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из следующих алгоритмов основан на сложности задачи дискретного логарифмирования: </div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">RSA</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">GGH</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Lampart</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="200">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Diffie-Hellman</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_2_400">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">На каком из изображений реально применявшееся шифрующее устройство?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam"><img src="upload/img-1.png" style="height: 150px;margin:0 auto;vertical-align: middle;" alt=""</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam"><img src="upload/img-2.png" style="height: 150px;margin:0 auto;vertical-align: middle;" alt=""></span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="400">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam"><img src="upload/img-3.png" style="height: 150px;margin:0 auto;vertical-align: middle;" alt=""></span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam"><img src="upload/img-4.jpg" style="height: 150px;margin:0 auto;vertical-align: middle;" alt=""></span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_2_600">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из следующих методов не используется для атак на функцию сжатия криптографической хеш-функции?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Sliding-атака</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">дифференциальный криптоанализ</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="600">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">padding oracle</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">поиск неподвижных точек</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_2_800">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какое из этих преобразований не является аффинным преобразованием 32х битных векторов над полем F2?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">(x | 0xDEADBEEF) - 0xA</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">0x11 * (x & 0x0F0F0F0F)</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="800">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">0xB00B0000 | (x+1)</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">CRC32(x)</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_3_100">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какая из технологий обычно не усложняет эксплуатацию ошибок связанных с ошибками форматной строки?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">PaX</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">ASLR</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="100">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">canary word</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">DEP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_3_200">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какая из техник применяется для обхода защиты stack canary?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="200">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">SEH overwrite</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">ROP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">JMP ESP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">heap spray</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_3_400">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Использование какого функционала позволяет загрузить DLL в адресное пространство и никогда не приведет к ошибкам динамической линковки?                                                        </div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Таблица импорта</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">LoadLibrary</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">CreateFiberEx</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="400">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">MapViewOfFile</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_3_600">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из данных системных вызовов используется функцией malloc()?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">rt_sigaction</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">arch_prctl</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="600">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">brk</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">fcntl</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_3_800">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">В каком варианте реализации отсутствует переполнение?						<img src="upload/pwn800-c.png" style="height: 450px;display: block;margin: 20px auto 0;" alt=""></div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">1</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">2</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">3</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="800">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">4</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_4_100">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какая библиотека была подвержена этой уязвимости? <img src="upload/img-6.png" style="height: 250px;display: block;margin: 20px auto 0;" alt=""></div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">gnutls</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">libcurl</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="100">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">openssl</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">libc</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_4_200">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">В чем отличие WPA2-psk от WPA-psk?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="200">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="200" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">в алгоритме <br>шифрования</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">в возможности использовать один ключ на всех пользователей</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">в увеличенной дальности действия</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">в наличии защиты от поддельных точек доступа</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_4_400">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Как называется утилита для подбора PIN кода от WPS WIFI?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Kismet</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="400">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Reaver</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Aircrack-ng</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Wireshark</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_4_600">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Какой из этих протоколов не поддерживает аутентификацию?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="600">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">TFTP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">FTP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">XMPP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">UUCP</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_4_800">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Что из перечисленного не влияет на количество одновременных исходящих TCP-соединений, которое может открыть программа?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">ограничение на количество открытых файлов (ulimit -n)</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="800">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="800" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">SO_REUSEPORT</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">ephemeral port range</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">SO_REUSEADDR</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_5_100">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Что может защитить от того, что на картинке?<img src="upload/img-5.jpg" style="height: 150px;display: block;margin: 20px auto 0;" alt=""></div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="100">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Упаковка от яиц</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Шапочка из фольги</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Кактус</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Антивирус</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_5_200">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">В какой социальной сети можно узнать дату рождения пользователя, даже если он её скрыл?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Google+</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="200">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">VK</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">FB</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Twitter</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_5_400">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Как зовут хакера, известного в том числе взломом Sony Playstation?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Kevin Mitnick</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="400">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Geohot</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Dan Kaminsky</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Mario Heiderich</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_5_600">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Как называется самый правдоподобный сериал про хакеров?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">HackerBot</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="600">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Mr. Robot</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Kung Fury</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">Silicon Valley</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+					<div class="part__item" id="it_5_800">
+						<div class="part__quest">
+							<!-- вопрос -->
+							<div class="question__q">Символ с каким названием не содержится в Unicode?</div>
+							<div class="question__buttons">
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">HOT PEPPER</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">SNOWMAN WITHOUT SNOW</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="question__row">
+									<div class="question__col">
+										<div class="pbutton pbutton_ok" data-value="800">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">FOX SPEECH</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_ok">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_ok">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Верно!
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="question__col">
+										<div class="pbutton" data-value="0">
+											<div class="pbutton__border"></div>
+											<div class="pbutton__box">
+												<input type="text" value="100" class="pbutton__input" data-thickness="0.04" data-readOnly="true" data-bgColor="#fff" data-fgColor="#000">
+											</div>
+											<div class="pbutton__text">
+												<span class="pbutton__vam">PILE OF POO</span>
+											</div>
+											<div class="pbutton__sucess pbutton__sucess_no">
+												<span class="question__but-in">
+													<span class="question__kv question__kv_no">
+														<span class="question__cor1"></span>
+														<span class="question__cor2"></span>
+														<span class="question__cor3"></span>
+														<span class="question__cor4"></span>
+													</span>
+													Неправильно
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /вопрос -->
+						</div>
+					</div>
+				</div>
+				<!-- /part items -->
+			</div>
+		</div>
+			<div class="part" id="summ">
+				<div class="totpage">
+					<div class="totpage__top">
+						<div class="totpage__l">
+							<img src="img/logo-min.png" class="" alt="">
+						</div>
+						<div class="totpage__r">
+							<a href=""><img src="img/logo-mail.png" class="" alt=""></a>
+						</div>
+					</div>
+					<div class="totpage__head">Поздравляем, твой результат:</div>
+					<div class="totpage__summ">
+						<div id="summ-val">0</div>
+						<div class="totpage__bord-1"></div>
+						<div class="totpage__bord-2"></div>
+						<div class="totpage__bord-3"></div>
+						<div class="totpage__bord-4"></div>
+						<div class="totpage__bord-5"></div>
+						<div class="totpage__bord-6"></div>
+						<div class="totpage__bord-7"></div>
+						<div class="totpage__bord-8"></div>
+					</div>
+					<div class="totpage__p">Чтобы результат попал в протокол соревнований, введи свое имя</div>
+					<div class="totpage__buttons">
+						<div class="totpage__row">
+							<a class="totpage__button" id="form-show">Ввести имя</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="part" id="form">
+				<div class="totpage">
+					<div class="totpage__top">
+						<div class="totpage__l">
+							<img src="img/logo-min.png" class="" alt="">
+						</div>
+						<div class="totpage__r">
+							<a href=""><img src="img/logo-mail.png" class="" alt=""></a>
+						</div>
+					</div>
+					<form action="/" method="post" onsubmit="return submit_form(this)">
+						<div class="form">
+							<div class="form__row">
+								<label class="form__label">Твоё имя:</label>
+							</div>
+							<input type="text" class="form__input" name="nickname" autofocus='autofocus' autocomplete='off'>
+							<input type="hidden" id="form-count" name="record">
+						</div>
+					</form>
+				</div>
+			</div>
+	</div>
+	<div class="music">
+		<div id="player1"></div>
+		<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player"><!-- старт -->
+			<div class="jp-type-single">
+				<button class="jp-play" role="button" tabindex="0"></button>
+				<div class="jp-type-playlist">
+					<div class="jp-playlist">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="player2"></div>
+		<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player"><!-- ошибка -->
+			<div class="jp-type-single">
+				<button class="jp-play" role="button" tabindex="0"></button>
+				<div class="jp-type-playlist">
+					<div class="jp-playlist">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="player3"></div>
+		<div id="jp_container_3" class="jp-audio" role="application" aria-label="media player"><!-- верно -->
+			<div class="jp-type-single">
+				<button class="jp-play" role="button" tabindex="0"></button>
+				<div class="jp-type-playlist">
+					<div class="jp-playlist">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- script -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/jquery.knob.min.js"></script>
+	<script src="js/jquery.jplayer.min.js"></script>
+	<script src="js/jquery.jplaylist.min.js"></script>
+	<script>
+		//music
+		$(function() {
+			new jPlayerPlaylist({
+				jPlayer: "#player1",
+				cssSelectorAncestor: "#jp_container_1"
+			}, [
+				{
+					title:"",
+					ogg:"sounds/bell_ring.ogg",
+					m4a:"sounds/bell_ring.m4a",
+				}
+			], {
+				swfPath: "jplayer",
+				supplied: "m4a, ogg",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				remainingDuration: true,
+				toggleDuration: true
+			});
+
+			new jPlayerPlaylist({
+				jPlayer: "#player2",
+				cssSelectorAncestor: "#jp_container_2"
+			}, [
+				{
+					title:"",
+					ogg:"sounds/computer_error.ogg",
+					m4a:"sounds/computer_error.m4a",
+				}
+			], {
+				swfPath: "jplayer",
+				supplied: "m4a, ogg",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				remainingDuration: true,
+				toggleDuration: true
+			});
+
+			new jPlayerPlaylist({
+				jPlayer: "#player3",
+				cssSelectorAncestor: "#jp_container_3"
+			}, [
+				{
+					title:"",
+					ogg:"sounds/preview.ogg",
+					m4a:"sounds/preview.m4a",
+				}
+			], {
+				swfPath: "jplayer",
+				supplied: "m4a, ogg",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				remainingDuration: true,
+				toggleDuration: true
+			});
+		});
+	</script>
+	<script src="js/script.js"></script>
+	<!-- /script -->
+</body>
+</html>

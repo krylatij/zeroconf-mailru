@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title></title>
+	<meta name="description" content=""/>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico"/>
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<!-- script -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/script.js"></script>
+	<!-- /script -->
+</head>
+<body style="overflow:hidden">
+	<div class="wrapper">
+		<div class="background"><div class="background__grid"></div></div>
+		<div class="total">
+			<div class="total__inner">
+				<div class="total__top">
+					<div class="total__left">
+						<a href="" class="total__back">Результаты игры</a>
+					</div>
+					<div class="total__right">
+						<div class="total__coin">
+							<div class="total__co">заработано очков</div>
+						</div>
+					</div>
+				</div>
+				<div class="total__content">
+					<div class="total__item">
+						<div class="total__user">
+							<span class="total__name" id="name-0"></span>
+						</div>
+						<div class="total__summ" id="record-0"></div>
+						<div class="total__bord-1"></div>
+						<div class="total__bord-2"></div>
+						<div class="total__bord-3"></div>
+						<div class="total__bord-4"></div>
+						<div class="total__bord-5"></div>
+						<div class="total__bord-6"></div>
+						<div class="total__bord-7"></div>
+						<div class="total__bord-8"></div>
+					</div>
+					<div class="total__item">
+						<div class="total__user">
+							<span class="total__name" id="name-1"></span>
+						</div>
+						<div class="total__summ" id="record-1"></div>
+					</div>
+					<div class="total__item">
+						<div class="total__user">
+							<span class="total__name" id="name-2"></span>
+						</div>
+						<div class="total__summ" id="record-2"></div>
+					</div>
+					<div class="total__item">
+						<div class="total__user">
+							<span class="total__name" id="name-3"></span>
+						</div>
+						<div class="total__summ" id="record-3"></div>
+					</div>
+					<div class="total__item">
+						<div class="total__user">
+							<span class="total__name" id="name-4"></span>
+						</div>
+						<div class="total__summ" id="record-4"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+$(window).load(function() {
+	reload_records();
+	setInterval(reload_records, 300);
+});
+	</script>
+</body>
+</html>
