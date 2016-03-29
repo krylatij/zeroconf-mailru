@@ -1,6 +1,9 @@
 var question_selected = false;
+var config;
+
 
 // Avoid `console` errors in browsers that lack a console.
+
 if (!(window.console && console.log)) {
     (function() {
         var noop = function() {};
@@ -109,38 +112,38 @@ $(window).load(function() {
 	}
 
 	//choice
-		var citem = $('.choice__item'),
-			qpart = $('#qpart'),
-			cself;
+	var citem = $('.choice__item'),
+		qpart = $('#qpart'),
+		cself;
 
-		citem.on('click', function(e) {
-			if (question_selected) {
-				e.preventDefault();
-				return false;
-			}
-			cself = $(this);
-			if(!$(this).hasClass('opened')) {
-				question_selected = true;
-				cself.addClass('opened');
-				$('#choice').fadeOut(function() {
-					$('.background__overlay').addClass(cself.attr('data-bg'));
-					qpart.fadeIn();
-
-					$('#' + cself.attr('href')).fadeIn();
-					$(window).trigger('resize');
-				});
-			}
-
+	citem.on('click', function(e) {
+		if (question_selected) {
 			e.preventDefault();
-		});
+			return false;
+		}
+		cself = $(this);
+		if(!$(this).hasClass('opened')) {
+			question_selected = true;
+			cself.addClass('opened');
+			$('#choice').fadeOut(function() {
+				$('.background__overlay').addClass(cself.attr('data-bg'));
+				qpart.fadeIn();
+
+				$('#' + cself.attr('href')).fadeIn();
+				$(window).trigger('resize');
+			});
+		}
+
+		e.preventDefault();
+	});
 
 	//buttons
 
-	var pinput = $('.pbutton__input'), self,
-	    qvalue = $('#qvalue');
-    qvalue2 = $('#qvalue2');
+	var pinput = $('.pbutton__input'),
+	    qvalue = $('#qvalue'),
+   		 qvalue2 = $('#qvalue2');
 
-		pinput.each(function() {
+	pinput.each(function() {
 			$(this).knob();
 		});
 
@@ -162,7 +165,7 @@ $(window).load(function() {
 				},
 				complete: function() {
 				    qvalue.text(parseInt(qvalue.text()) + parseInt(self.attr('data-value')));
-                                    qvalue2.text(parseInt(qvalue2.text()) + parseInt(self.attr('data-value')));
+						qvalue2.text(parseInt(qvalue2.text()) + parseInt(self.attr('data-value')));
 					if(0 && parseInt(self.attr('data-value')) == 0) {
 						$('#jp_container_2 .jp-play').trigger('click');
 					} else {
@@ -172,6 +175,7 @@ $(window).load(function() {
 					self.find('.pbutton__border').addClass('hover').removeClass('animated');
 					self.find('.pbutton__sucess').fadeIn();
 
+					self.find('.pbutton__sucess').css({'border-color': red});
 
 					//
 					if((s == 0 && m == 0) || $('.choice__item').not('.opened').length == 0) {
@@ -224,10 +228,24 @@ $(window).load(function() {
 		});
 	});
 
-	//
-	setTimeout(function() {
+	$.when($.getJSON('/config', function (data){
+		config = data;
+		var tmp  = config.TimeToSolve.split(':');
+		//alert(m);
+		m = parseInt(tmp[0]);
+		s = parseInt(tmp[1]);
+		//alert(m);qvalue_unknown
+		if(config.ShowScoreOnlyAtTheEnd){
+			$('#qvalue,#qvalue2').hide();
+		} else {
+			$('#qvalue_unknown,#qvalue2_unknown').hide()
+		}
+
+
+	})).done(setTimeout(function() {
 		$('.loading').fadeOut();
-	}, 1000);
+	}, 1000));
+	//
 
 });
 
