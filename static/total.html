@@ -26,7 +26,7 @@
 					</div>
 					<div class="total__right">
 						<div class="total__coin">
-							<div class="total__co">заработано очков: <p id="score">0</p></div>
+							<div class="total__co">заработано очков: <span id="score">0</span></div>
 						</div>
 					</div>
 				</div>
@@ -83,7 +83,7 @@ $(window).load(function() {
 		$('div.total__co').hide();
 	}
 	reload_records();
-	setInterval(reload_records, 300);
+	setInterval(reload_records, 1000);
 });
 	</script>
 </body>

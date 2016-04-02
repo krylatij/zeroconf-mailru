@@ -40,6 +40,7 @@ $(window).load(function() {
 				$('#summ').fadeIn();
 				$('#form-count').val(parseInt($('#qvalue').text()));
 			});
+			return;
 		}
 		if (s == 0){
 			s = 60;
@@ -283,7 +284,7 @@ function reload_records(data) {
 
 	for (var i = 0; i < config.ScoresCount; i++) {
 		if (data.length > i) {
-			document.getElementById('name-' + i).innerHTML = data[i].Name;
+			document.getElementById('name-' + i).innerHTML = data[i].Name.replace('<', '&lt;').replace('>', '&gt;');
 			document.getElementById('record-' + i).innerHTML = data[i].Score;
 		} else {
 			document.getElementById('name-' + i).innerHTML = '';

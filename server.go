@@ -2,12 +2,12 @@ package main
 
 import (
 	"encoding/json"
+	"html"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
-	"html"
 )
 
 type Player struct {
@@ -17,6 +17,7 @@ type Player struct {
 
 type ServerSettings struct {
 	Port        int
+	CacheConfig bool
 	ScoresCount int
 }
 
@@ -34,6 +35,27 @@ var ClientConf ClientSettings
 var ClientConfJson []byte
 
 func score(w http.ResponseWriter, r *http.Request) {
+	file, err := ioutil.ReadFile("./scores.json")
+	if err != nil {
+		log.Println("can't read scores %v", err)
+		http.Error(w, "Can't read scores", http.StatusInternalServerError)
+		return
+	}
+
+	var players []Player
+	err = json.Unmarshal(file, &players)
+	if err != nil {
+		log.Println("can't unmarshal scores %v", err)
+		http.Error(w, "Can't read scores json", http.StatusInternalServerError)
+		return
+	}
+
+	if r.Method == http.MethodGet {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(file)
+		return
+	}
+
 	r.ParseForm()
 
 	if len(r.Form) == 0 {
@@ -46,16 +68,6 @@ func score(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	file, err := ioutil.ReadFile("./scores.json")
-	if err != nil {
-		log.Println("can't read scores %v", err)
-		http.Error(w, "Can't read scores", http.StatusInternalServerError)
-		return
-	}
-
-	var players []Player
-	json.Unmarshal(file, &players)
-
 	updated := false
 
 	//обрежем рекорды, если поменяли настройку
@@ -63,31 +75,39 @@ func score(w http.ResponseWriter, r *http.Request) {
 		players = players[:ServerConf.ScoresCount]
 		updated = true
 	}
-	
-	name := r.FormValue("name")
-	if len(name) > 50{
-		name = html.EscapeString(name[:50]) + "[truncated]"
+
+	name := html.EscapeString(r.FormValue("name"))
+	if len(name) > 50 {
+		name = name[:50] + "[truncated]"
 	}
 
 	newPlayer := Player{name, score}
+
 	//когда записей ещё нет
 	if len(players) == 0 {
-		players = [1]Player{newPlayer}
-		log.Println("new first record:", newPlayer)
-	}
-	else{
+		players = []Player{newPlayer}
+		log.Println("new first record: %v", newPlayer)
+	} else {
 		for i, player := range players {
 			if player.Score > newPlayer.Score {
 				continue
 			}
-	
-			log.Println("new record:", newPlayer)
-			if i < MAX_COUNT-1 {
+
+			log.Println("new record: %v", newPlayer)
+			if i < ServerConf.ScoresCount-1 {
 				players = append(players[:i], append([]Player{newPlayer}, players[i:]...)...)
+			} else {
+				players[i] = newPlayer
 			}
-			players[i] = newPlayer
+
 			updated = true
 			break
+		}
+
+		//если список рекордов всё же можно пополнить
+		if !updated && len(players) < ServerConf.ScoresCount {
+			players = append(players[:], []Player{newPlayer}...)
+			updated = true
 		}
 	}
 
@@ -98,6 +118,7 @@ func score(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	log.Println("upd %s", updated)
 	if updated {
 		err = ioutil.WriteFile("./scores.json", result, 0644)
 		if err != nil {
@@ -113,6 +134,17 @@ func score(w http.ResponseWriter, r *http.Request) {
 
 func config(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+
+	if !ServerConf.CacheConfig {
+		var err error
+		ServerConf, ClientConf, ClientConfJson, err = read_settings()
+		if err != nil {
+			log.Fatalf("error opening settings file: %v", err)
+			http.Error(w, "Can't read settings", http.StatusInternalServerError)
+			return
+		}
+	}
+
 	w.Write(ClientConfJson)
 }
 
