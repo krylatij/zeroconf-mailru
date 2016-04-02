@@ -1,5 +1,5 @@
 var question_selected = false;
-var config;
+var config = null;
 
 
 // Avoid `console` errors in browsers that lack a console.
@@ -18,58 +18,41 @@ if (!(window.console && console.log)) {
 
 window.oncontextmenu = function () {
 	return false;
-}
+};
 document.onkeydown = function (e) {
 	if (window.event.keyCode == 123 || e.button == 2)
 		return false;
-}
+};
 
 $(window).load(function() {
-//timer
-	var timer = $('#timer'),
-		min = timer.find('.min'),
-		sek = timer.find('.sek'),
-	    timer2 = $('#timer2'),
-		min2 = timer2.find('.min'),
-		sek2 = timer2.find('.sek'),
-		s = 0, m = 3, time;
+    //timer
+	var	s, m, time,
+		mins = $('#timer > .min,#timer2 > .min'),
+		secs = $('#timer > .sec,#timer2 > .sec');
 
 	function timerFunc() {
-		if(s <= 10) {
-			if(s == 0) {
-				if(m == 0) {
-					clearInterval(time);
-					//
-					bgReset();
-					$('#summ-val').text(parseInt($('#qvalue').text()));
-					$('#choice, #qpart').delay(500).fadeOut(function() {
-						$('#summ').fadeIn();
-						$('#form-count').val(parseInt($('#qvalue').text()));
-					});
-
-				} else {
-					s = 60;
-					s --;
-					m --;
-					min.text(m);
-					sek.text(s);
-					min2.text(m);
-					sek2.text(s);
-				}
-			} else {
-				s --;
-			    sek.text('0' + s);
-                            sek2.text('0' + s);
-			}
-		} else {
-			s --;
-		    sek.text(s);
-                    sek2.text(s);
+		if(s == 0 && m == 0){
+			clearInterval(time);
+			//
+			bgReset();
+			$('#summ-val').text(parseInt($('#qvalue').text()));
+			$('#choice, #qpart').delay(500).fadeOut(function() {
+				$('#summ').fadeIn();
+				$('#form-count').val(parseInt($('#qvalue').text()));
+			});
 		}
+		if (s == 0){
+			s = 60;
+			if (m > 0)
+				m --;
+		}
+		s --;
+		mins.text(m);
+		secs.text(s < 10 ? '0' + s : s);
 	}
 
 	function numb() {
-		$('#jp_container_1 .jp-play').trigger('click');
+		$('#jp_container_1').find('.jp-play').trigger('click');
 		var nuic = 3;
 		$('.numb__center').fadeIn(500);
 		var nui = setInterval(function() {
@@ -140,8 +123,7 @@ $(window).load(function() {
 	//buttons
 
 	var pinput = $('.pbutton__input'),
-	    qvalue = $('#qvalue'),
-   		 qvalue2 = $('#qvalue2');
+	    qvalues = $('#qvalue,#qvalue2');
 
 	pinput.each(function() {
 			$(this).knob();
@@ -164,32 +146,45 @@ $(window).load(function() {
 					self.find(".pbutton__input").val(Math.ceil(this.animatedVal)).trigger("change");
 				},
 				complete: function() {
-				    qvalue.text(parseInt(qvalue.text()) + parseInt(self.attr('data-value')));
-						qvalue2.text(parseInt(qvalue2.text()) + parseInt(self.attr('data-value')));
+					var value = parseInt(self.attr('data-value'));
+				    qvalues.text(parseInt(qvalues.text()) + value);
+
 					if(0 && parseInt(self.attr('data-value')) == 0) {
-						$('#jp_container_2 .jp-play').trigger('click');
+						$('#jp_container_2').find('.jp-play').trigger('click');
 					} else {
-						$('#jp_container_3 .jp-play').trigger('click');
+						$('#jp_container_3').find('.jp-play').trigger('click');
 					}
 					self.find('.pbutton__box').css({'opacity': 0});
 					self.find('.pbutton__border').addClass('hover').removeClass('animated');
-					self.find('.pbutton__sucess').fadeIn();
 
-					self.find('.pbutton__sucess').css({'border-color': red});
+					var answerBlock = self.find('.pbutton__sucess');
+					answerBlock.fadeIn();
 
-					//
+					if(config.ShowRightAnswer){
+						if(value > 0){
+							answerBlock.addClass('pbutton__sucess_true');
+						}
+						else{
+							answerBlock.addClass('pbutton__sucess_false');
+
+							answerBlock.closest('.question__buttons').find('div[data-value]')
+								.filter('[data-value!=0]')
+								.addClass('pbutton__sucess_true');
+						}
+					}
+
 					if((s == 0 && m == 0) || $('.choice__item').not('.opened').length == 0) {
 						clearInterval(time);
 						//
 						bgReset();
 						$('#summ-val').text(parseInt($('#qvalue').text()));
-						$('#choice, #qpart').delay(500).fadeOut(function() {
+						$('#choice, #qpart').delay(config.ShowRightAnswerDelayMilliseconds).fadeOut(function() {
 							$('#summ').fadeIn();
 							$('#form-count').val(parseInt($('#qvalue').text()));
 						});
 					} else {
 						//next question
-						self.parents('.part__quest').delay(500).fadeOut(function() {
+						self.parents('.part__quest').delay(config.ShowRightAnswerDelayMilliseconds).fadeOut(function() {
 							if($(this).next().length != 0) {
 								$(this).next().fadeIn();
 							} else {
@@ -228,33 +223,53 @@ $(window).load(function() {
 		});
 	});
 
+	function initTime(minutes, seconds){
+		m = minutes;
+		s = seconds;
+		mins.text(minutes);
+		secs.text(seconds);
+
+		var timeToDisplay = minutes + ' ' + units(minutes, {nom: 'минута', gen: 'минуты', plu: 'минут'});
+		if (seconds > 0)
+			timeToDisplay += ' ' + seconds + ' ' + units(seconds, {nom: 'секунда', gen: 'секунды', plu: 'секунд'});
+
+		$('#time_to_play').text(timeToDisplay);
+	};
+
 	$.when($.getJSON('/config', function (data){
 		config = data;
 		var tmp  = config.TimeToSolve.split(':');
-		//alert(m);
-		m = parseInt(tmp[0]);
-		s = parseInt(tmp[1]);
-		//alert(m);qvalue_unknown
+
+		initTime(parseInt(tmp[0]), parseInt(tmp[1]));
+
 		if(config.ShowScoreOnlyAtTheEnd){
 			$('#qvalue,#qvalue2').hide();
 		} else {
-			$('#qvalue_unknown,#qvalue2_unknown').hide()
+			$('#qvalue_unknown,#qvalue2_unknown').hide();
 		}
-
-
 	})).done(setTimeout(function() {
 		$('.loading').fadeOut();
 	}, 1000));
-	//
-
 });
+
+//склоняем числительное {nom: 'минута', gen: 'минуты', plu: 'минут'}
+function units(num, cases) {
+	var word = (
+		num % 10 == 1 && num % 100 != 11
+			? cases.nom
+			: num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
+			? cases.gen
+			: cases.plu
+	)
+	return word;
+}
 
 function submit_form(form) {
 	var player_nickname = form.elements['nickname'].value;
 	var player_record = form.elements['record'].value;
 
 	$.post('/score', {"name": player_nickname, "score": player_record}, function() {
-		window.location = '/';
+		window.location = '/total.html?score=' + player_record;
 	});
 }
 
@@ -266,9 +281,9 @@ function reload_records(data) {
 		return;
 	}
 
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < config.ScoresCount; i++) {
 		if (data.length > i) {
-			document.getElementById('name-' + i).innerHTML = data[i].Name.replace('<', '&lt;').replace('>', '&gt;');
+			document.getElementById('name-' + i).innerHTML = data[i].Name;
 			document.getElementById('record-' + i).innerHTML = data[i].Score;
 		} else {
 			document.getElementById('name-' + i).innerHTML = '';

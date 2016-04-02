@@ -22,11 +22,11 @@
 			<div class="total__inner">
 				<div class="total__top">
 					<div class="total__left">
-						<a href="" class="total__back">Результаты игры</a>
+						<a href="/" class="total__back">Результаты игры</a>
 					</div>
 					<div class="total__right">
 						<div class="total__coin">
-							<div class="total__co">заработано очков</div>
+							<div class="total__co">заработано очков: <p id="score">0</p></div>
 						</div>
 					</div>
 				</div>
@@ -75,6 +75,13 @@
 	</div>
 	<script>
 $(window).load(function() {
+	var getParams = window.location.search.substring(1).split('=');
+	if(getParams[0] == 'score' && getParams[1] && parseInt(getParams[1]) == getParams[1]){
+		document.getElementById('score').innerHTML = getParams[1];
+	}
+	else{
+		$('div.total__co').hide();
+	}
 	reload_records();
 	setInterval(reload_records, 300);
 });

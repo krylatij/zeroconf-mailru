@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"html"
 )
 
 type Player struct {
@@ -20,10 +21,12 @@ type ServerSettings struct {
 }
 
 type ClientSettings struct {
-	TimeToSolve           string
-	TimeToSolveSeconds    int
-	ShowRightAnswer       bool
-	ShowScoreOnlyAtTheEnd bool
+	ScoresCount                      int
+	TimeToSolve                      string
+	TimeToSolveSeconds               int
+	ShowRightAnswer                  bool
+	ShowRightAnswerDelayMilliseconds int
+	ShowScoreOnlyAtTheEnd            bool
 }
 
 var ServerConf ServerSettings
@@ -31,8 +34,21 @@ var ClientConf ClientSettings
 var ClientConfJson []byte
 
 func score(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+
+	if len(r.Form) == 0 {
+		http.Error(w, "Bad data. Form is empty.", http.StatusInternalServerError)
+		return
+	}
+	score, err := strconv.Atoi(r.FormValue("score"))
+	if err != nil || score < 0 || score > 100500 {
+		http.Error(w, "Bad data. Incorrect score.", http.StatusInternalServerError)
+		return
+	}
+
 	file, err := ioutil.ReadFile("./scores.json")
 	if err != nil {
+		log.Println("can't read scores %v", err)
 		http.Error(w, "Can't read scores", http.StatusInternalServerError)
 		return
 	}
@@ -42,48 +58,50 @@ func score(w http.ResponseWriter, r *http.Request) {
 
 	updated := false
 
-	//если в конфиге
-	if len(players) != ServerConf.ScoresCount {
-		tmp := make([]Player, ServerConf.ScoresCount)
-		copy(tmp, players)
-		players = tmp
+	//обрежем рекорды, если поменяли настройку
+	if len(players) > ServerConf.ScoresCount {
+		players = players[:ServerConf.ScoresCount]
+		updated = true
+	}
+	
+	name := r.FormValue("name")
+	if len(name) > 50{
+		name = html.EscapeString(name[:50]) + "[truncated]"
 	}
 
-	r.ParseForm()
-	if len(r.Form) > 0 {
-		score, err1 := strconv.Atoi(r.FormValue("score"))
-		if err1 != nil || score < 0 || score > 100500 {
-			http.Error(w, "Bad data", http.StatusInternalServerError)
-			return
-		}
-		newPlayer := Player{r.FormValue("name"), score}
-
+	newPlayer := Player{name, score}
+	//когда записей ещё нет
+	if len(players) == 0 {
+		players = [1]Player{newPlayer}
+		log.Println("new first record:", newPlayer)
+	}
+	else{
 		for i, player := range players {
-			if player.Score < score {
-				log.Println("New record:", newPlayer)
-				for j := 4; j >= i; j-- {
-					if j > 0 {
-						players[j] = players[j-1]
-					}
-				}
-				players[i] = newPlayer
-				updated = true
-				break
-			} else {
-				log.Println("Player score:", newPlayer)
+			if player.Score > newPlayer.Score {
+				continue
 			}
+	
+			log.Println("new record:", newPlayer)
+			if i < MAX_COUNT-1 {
+				players = append(players[:i], append([]Player{newPlayer}, players[i:]...)...)
+			}
+			players[i] = newPlayer
+			updated = true
+			break
 		}
 	}
 
-	result, err4 := json.Marshal(players)
-	if err4 != nil {
+	result, err := json.Marshal(players)
+	if err != nil {
+		log.Println("can't marshal scores %v", err)
 		http.Error(w, "Can't generate JSON", http.StatusInternalServerError)
 		return
 	}
 
 	if updated {
-		err5 := ioutil.WriteFile("./scores.json", result, 0644)
-		if err5 != nil {
+		err = ioutil.WriteFile("./scores.json", result, 0644)
+		if err != nil {
+			log.Println("can't write scores %v", err)
 			http.Error(w, "Can't write scores", http.StatusInternalServerError)
 			return
 		}
@@ -151,7 +169,6 @@ func main() {
 	http.Handle("/", http.FileServer(http.Dir("static")))
 
 	log.Println("listening port " + strconv.Itoa(ServerConf.Port))
-	log.Println("time to solve " + ClientConf.TimeToSolve)
 
 	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(ServerConf.Port), nil))
 

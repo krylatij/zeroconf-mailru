@@ -1789,6 +1789,22 @@ a:hover {
 	vertical-align: middle;
 	content: "";
 }
+
+@keyframes right-answer {
+    0%   {background-color: transparent;}
+    50%  {background-color: #00af61;}
+    100%  {background-color: transparent;}
+}
+
+.pbutton__sucess_true{
+    background-color: #00af61;
+    animation: right-answer 2s ease-in-out 0s 2 normal;
+    -webkit-animation: right-answer 2s ease-in-out 0s 2 normal;
+}
+
+.pbutton__sucess_false{
+    background-color: #ff423d;
+}
 /* ----------------- loader ----------------- */
 .loading {
 	background: #082255;
