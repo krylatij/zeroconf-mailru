@@ -2,7 +2,7 @@
   "Port":8081,
   "ScoresCount":5,
   "CacheConfig": false,
-  "TimeToSolve":"0:01",
+  "TimeToSolve":"20:01",
   "ShowRightAnswer":true,
   "ShowRightAnswerDelayMilliseconds":2700,
   "ShowScoreOnlyAtTheEnd":false

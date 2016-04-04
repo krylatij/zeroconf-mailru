@@ -86,14 +86,14 @@ func score(w http.ResponseWriter, r *http.Request) {
 	//когда записей ещё нет
 	if len(players) == 0 {
 		players = []Player{newPlayer}
-		log.Println("new first record: %v", newPlayer)
+		log.Println("new first record: %#v", newPlayer)
 	} else {
 		for i, player := range players {
 			if player.Score > newPlayer.Score {
 				continue
 			}
 
-			log.Println("new record: %v", newPlayer)
+			log.Println("new record: %#v", newPlayer)
 			if i < ServerConf.ScoresCount-1 {
 				players = append(players[:i], append([]Player{newPlayer}, players[i:]...)...)
 			} else {
@@ -118,7 +118,6 @@ func score(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	log.Println("upd %s", updated)
 	if updated {
 		err = ioutil.WriteFile("./scores.json", result, 0644)
 		if err != nil {

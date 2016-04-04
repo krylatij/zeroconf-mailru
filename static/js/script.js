@@ -125,6 +125,7 @@ $(window).load(function() {
 
 	var pinput = $('.pbutton__input'),
 	    qvalues = $('#qvalue,#qvalue2');
+	    qval = $('#qvalue');
 
 	pinput.each(function() {
 			$(this).knob();
@@ -148,7 +149,7 @@ $(window).load(function() {
 				},
 				complete: function() {
 					var value = parseInt(self.attr('data-value'));
-				    qvalues.text(parseInt(qvalues.text()) + value);
+				    qvalues.text(parseInt(qval.text()) + value);
 
 					if(0 && parseInt(self.attr('data-value')) == 0) {
 						$('#jp_container_2').find('.jp-play').trigger('click');
