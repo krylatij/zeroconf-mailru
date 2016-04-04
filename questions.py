@@ -98,5 +98,5 @@ questions = (
         ('Символ с каким названием не содержится в Unicode?',
          ('FISHING POLE AND FISH', 'MAN IN BUSINESS SUIT LEVITATING', 'ONE HAND CLAPPING', 'NIGHT WITH STARS'),
          2)
-    ))
+    )),
 )

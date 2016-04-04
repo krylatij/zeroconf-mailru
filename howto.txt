@@ -1,0 +1,46 @@
+Игра, что и как.
+
+==========
+Клиентская часть лежит в папке static.
+Главный файл index.html
+
+==========
+Серверная часть
+
+Запускать через
+>go run server.go
+или запускать уже скомпиленый бинарник (порт по умолчанию 8081).
+
+При запуске читаются настройки из setting.json (порт, параметры игры и прочее)
+В зависимости от ключа CacheConfig настройки могут меняться без перезапуска сервера.
+Рекорды сохраняются в scores.json.
+
+==========
+Генерация index.html
+
+Вопросы берутся из questions.py
+Можно сделать от 1 до 5 категорий по 5 вопросов в каждой.
+По умолчанию сгенерируется static/out.html (не index.html, чтобы случайно не затереть существующий. можно поменять ключом.)
+
+Для генерации запустить generate.py.
+По ключу -h отобразятся все параметры:
+
+> generate.py -h
+D:\Work\go\zeroconf-mailru>generate.py -h
+usage: generate.py [-h] [-v] [--right RIGHT_ANSWER] [--wrong WRONG_ANSWER]
+                   [outfile]
+
+Script constructs HTML file based on template.html, template_question.html,
+template_category.html and questions from questions.py.
+
+positional arguments:
+  outfile               output filename. default "static/out.html"
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --verbose         verbose (debug) output
+  --right RIGHT_ANSWER  right answer message. default: Неправильно
+  --wrong WRONG_ANSWER  wrong answer message. default: Верно!
+
+
+
